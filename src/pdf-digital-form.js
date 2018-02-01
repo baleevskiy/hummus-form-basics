@@ -18,7 +18,7 @@ function toText(item) {
 }
 
 function parseForAcroformObject(pdfParser) {
-    var catalogDict = pdfParser.queryDictionaryObject(pdfParser.getTrailer(), 'Root').toPDFDictionary(),
+    var catalogDict = pdfParser.queryDictionaryObject(pdfParser.getTrailer(), 'Root').toPDFDictionary();
     var acroformDict = catalogDict.exists('AcroForm') ? pdfParser.queryDictionaryObject(catalogDict, 'AcroForm') : null;
     return acroformDict && acroformDict.toPDFDictionary();
 }
